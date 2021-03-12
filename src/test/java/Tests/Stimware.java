@@ -1,6 +1,7 @@
 package Tests;
 
 
+import Properties.SetPath;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,7 @@ public class Stimware {
         //Configuration.headless=true;
         Configuration.browser = WebDriverRunner.FIREFOX;
         //Configuration.browserBinary=("C:/Program Files/Google/Chrome Beta/Application/chrome.exe");
+        Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
     void setup() {
