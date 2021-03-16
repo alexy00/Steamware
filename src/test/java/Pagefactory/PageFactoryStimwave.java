@@ -1,6 +1,7 @@
 package Pagefactory;
 
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byId;
@@ -41,11 +42,8 @@ public class PageFactoryStimwave {
         sleep(300);
         switchTo().frame($x("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
         //$(".recaptcha-checkbox-border").click();
-        $("span[role='checkbox']").click();
+        $("span[role='checkbox']").shouldBe(Condition.visible).click();
         switchTo().defaultContent();
-        //SelenideElement sendRequest = $(byId("btnContactUs"));
-        //sendRequest.click();
-        //
         return page(PageFactoryStimwave.class);
     }
 }
