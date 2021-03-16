@@ -42,7 +42,9 @@ public class PageFactoryStimwave {
         sleep(300);
         switchTo().frame($x("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
         //$(".recaptcha-checkbox-border").click();
-        $("span[role='checkbox']").shouldBe(Condition.visible).click();
+        $("span[role='checkbox']")
+                .shouldBe(Condition.visible)
+                .click();
         switchTo().defaultContent();
         return page(PageFactoryStimwave.class);
     }
