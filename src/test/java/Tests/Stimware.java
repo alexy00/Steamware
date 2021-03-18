@@ -30,7 +30,7 @@ public class Stimware {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
         sleep(3000);
-        String path = screenshot("Steam");
+        screenshot("Steam");
 
     }
 }
