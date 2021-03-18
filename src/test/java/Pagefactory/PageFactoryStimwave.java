@@ -1,15 +1,26 @@
 package Pagefactory;
 
 
+import Properties.SetPath;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import org.openqa.selenium.NoSuchElementException;
+import utilities.RadInt;
 
 public class PageFactoryStimwave {
+    private ExtentReports report;
+    ExtentTest test;
+
+
     public PageFactoryStimwave contact(){
+        Configuration.reportsFolder = SetPath.Stimware();
         SelenideElement contactBtn = $(byText("Contact"));
         contactBtn.click();
         sleep(500);
@@ -42,9 +53,26 @@ public class PageFactoryStimwave {
         sleep(300);
         switchTo().frame($x("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
         //$(".recaptcha-checkbox-border").click();
-        $("span[role='checkbox']")
-                .shouldBe(Condition.visible)
+        SelenideElement ss= $("span[role='checkbox']");
+                ss.shouldBe(Condition.visible)
                 .click();
+
+        String path = screenshot("create"+ RadInt.randNum());
+        String imagePath = test.addScreenCapture(path);
+        try {
+            if (ss.isDisplayed()) {
+                test.log(LogStatus.PASS,"Captcha box is displayed");
+                test.log(LogStatus.INFO,imagePath);
+
+            } else {
+                test.log(LogStatus.FAIL, "Create profile fails");
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
         switchTo().defaultContent();
         return page(PageFactoryStimwave.class);
     }

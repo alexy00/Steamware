@@ -3,6 +3,8 @@ package Tests;
 
 import Properties.SetPath;
 import com.codeborne.selenide.WebDriverRunner;
+import com.relevantcodes.extentreports.LogStatus;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,8 +18,7 @@ public class Stimware {
     void configurations() {
         //Configuration.headless=true;
         Configuration.browser = WebDriverRunner.FIREFOX;
-        //Configuration.browserBinary=("C:/Program Files/Google/Chrome Beta/Application/chrome.exe");
-        Configuration.reportsFolder = SetPath.Stimware();
+        //Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
     void setup() {
@@ -29,6 +30,7 @@ public class Stimware {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
         sleep(3000);
-        screenshot("Steam");
+        //String path = screenshot("Steam");
+
     }
 }
