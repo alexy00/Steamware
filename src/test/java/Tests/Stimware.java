@@ -18,7 +18,7 @@ public class Stimware {
     void configurations() {
         //Configuration.headless=true;
         Configuration.browser = WebDriverRunner.FIREFOX;
-        //Configuration.reportsFolder = SetPath.Stimware();
+        Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
     void setup() {
@@ -30,7 +30,7 @@ public class Stimware {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
         sleep(3000);
-        //String path = screenshot("Steam");
+        String path = screenshot("Steam");
 
     }
 }
