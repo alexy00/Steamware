@@ -1,15 +1,12 @@
 package Tests;
 
 
+import Pagefactory.PageFactoryStimwave;
 import Properties.SetPath;
-import com.codeborne.selenide.WebDriverRunner;
-import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.NoSuchElementException;
+import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import Pagefactory.PageFactoryStimwave;
-import com.codeborne.selenide.Configuration;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -26,7 +23,7 @@ public class Stimware {
         open(baseUrl);
     }
     @Test
-    void Test1() throws Exception {
+    void Test1() {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
         sleep(5000);
