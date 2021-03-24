@@ -29,7 +29,7 @@ public class Stimware {
     void Test1() throws Exception {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
-        sleep(3000);
+        sleep(5000);
         screenshot("Steam");
 
     }
