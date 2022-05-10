@@ -15,7 +15,7 @@ public class Stimware {
     void configurations() {
         //Configuration.headless=true;
         //Configuration.browser = WebDriverRunner.FIREFOX;
-        //Configuration.reportsFolder = SetPath.Stimware();
+        Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
     void setup() {
