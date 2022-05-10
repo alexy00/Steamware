@@ -27,7 +27,7 @@ public class Stimware {
         PageFactoryStimwave contactForm = new PageFactoryStimwave();
         contactForm.contact();
         sleep(5000);
-        screenshot("Steam");
+        //screenshot("Steam");
 
     }
 }
