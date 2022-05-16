@@ -1,7 +1,7 @@
 package Tests;
 
 
-import Pagefactory.PageFactoryStimwave;
+import Pagefactory.ContactForm;
 import Properties.SetPath;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeClass;
@@ -24,7 +24,7 @@ public class Stimware {
     }
     @Test
     void Test1() {
-        PageFactoryStimwave contactForm = new PageFactoryStimwave();
+        ContactForm contactForm = new ContactForm();
         contactForm.contact();
         sleep(5000);
         screenshot("Steam");

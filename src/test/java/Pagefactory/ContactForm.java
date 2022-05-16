@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PageFactoryStimwave {
+public class ContactForm {
 
-    public PageFactoryStimwave contact(){
+    public ContactForm contact(){
         SelenideElement contactBtn = $(byText("Contact"));
         contactBtn.click();
         SelenideElement fname = $(byId("swcontactform-firstname"));
@@ -37,6 +37,6 @@ public class PageFactoryStimwave {
                 .shouldBe(Condition.visible)
                 .click();
         switchTo().defaultContent();
-        return page(PageFactoryStimwave.class);
+        return page(ContactForm.class);
     }
 }
