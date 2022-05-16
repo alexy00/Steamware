@@ -27,8 +27,8 @@ public class ContactForm {
         email.sendKeys("email@gmail.com");
         SelenideElement phone = $(byId("swcontactform-phone"));
         phone.sendKeys("1231231235");
-        SelenideElement selector = $(byId("swcontactform-pain_area"));
-        selector.selectOptionByValue("2");
+        SelenideElement painArea = $(byId("swcontactform-pain_area"));
+        painArea.selectOptionByValue("2");
         SelenideElement referral = $(byId("swcontactform-referral"));
         referral.selectOptionByValue("4");
         switchTo().frame($x("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
