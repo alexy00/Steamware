@@ -15,6 +15,7 @@ public class Stimware {
     void configurations() {
         //Configuration.headless=true;
         //Configuration.browser = WebDriverRunner.FIREFOX;
+        Configuration.browserBinary=("C:/Program Files/Google/Chrome Beta/Application/chrome.exe");
         Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
