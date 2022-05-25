@@ -15,7 +15,6 @@ public class Stimware {
     void configurations() {
         //Configuration.headless=true;
         //Configuration.browser = WebDriverRunner.FIREFOX;
-        Configuration.browserBinary=("C:/Program Files/Google/Chrome Beta/Application/chrome.exe");
         Configuration.reportsFolder = SetPath.Stimware();
     }
     @BeforeMethod
@@ -27,7 +26,7 @@ public class Stimware {
     void Test1() {
         ContactForm contactForm = new ContactForm();
         contactForm.contact();
-        $("#btnContactUs").click();
+        //$("#btnContactUs").click();
         sleep(5000);
         screenshot("Steam");
     }
