@@ -26,6 +26,7 @@ public class Stimware {
     void Test1() {
         ContactForm contactForm = new ContactForm();
         contactForm.contact();
+        $("#btnContactUs").click();
         sleep(5000);
         screenshot("Steam");
     }
